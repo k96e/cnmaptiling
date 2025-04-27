@@ -13,28 +13,28 @@ pip install cnmaptiling
 from cnmaptiling import Angle, Scale, NewStandard, OldStandard
 
 # 经纬度
-lat = Angle(d=39, m=54, s=30)
-lon = Angle(d=116, m=28, s=15)
+lat = Angle(d=31, m=50, s=57)
+lon = Angle(d=117, m=17, s=24)
 
 # 新图号
 print(NewStandard(Scale.LEVEL_1M).latlon_to_newstandard(lon, lat))
 print(NewStandard(Scale.LEVEL_50K).latlon_to_newstandard(lon, lat))
-# J50
-# J50E001010
+# H50
+# H50E001014
 
 # 新图号图廓范围
-print(NewStandard().newstandard_to_latlon("J50E001010"))
-# ((Angle(116° 15' 0.000"), Angle(39° 50' 0.000")), (Angle(116° 30' 0.000"), Angle(40° 0' 0.000")))
+print(NewStandard().newstandard_to_latlon("H50E001014"))
+# ((Angle(117° 15' 0.000"), Angle(31° 50' 0.000")), (Angle(117° 30' 0.000"), Angle(32° 0' 0.000")))
 
 # 旧图号
 print(OldStandard(Scale.LEVEL_1M).latlon_to_oldstandard(lon, lat))
 print(OldStandard(Scale.LEVEL_50K).latlon_to_oldstandard(lon, lat))
-# J-50
-# J-50-5-B
+# H-50
+# H-50-7-B
 
 # 旧图号图廓范围
-print(OldStandard(Scale.LEVEL_50K).oldstandard_to_latlon("J-50-5-B"))
-# ((Angle(116° 15' 0.000"), Angle(39° 50' 0.000")), (Angle(116° 30' 0.000"), Angle(40° 0' 0.000")))
+print(OldStandard(Scale.LEVEL_50K).oldstandard_to_latlon("H-50-7-B"))
+# ((Angle(117° 15' 0.000"), Angle(31° 50' 0.000")), (Angle(117° 30' 0.000"), Angle(32° 0' 0.000")))
 ```
 
 ## 参考
